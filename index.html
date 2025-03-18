@@ -7,22 +7,20 @@
     <!-- Load Redoc from CDN -->
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
     <style>
-      /* Global styles */
+      /* Global Styles */
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #edeae5; /* Light background */
+        background-color: #edeae5;
       }
-      /* Top Navigation Bar */
+      /* Top Navigation */
       nav {
-        background-color: #3e4f47; /* Dark muted blue-green */
+        background-color: #3e4f47;
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
       nav a {
         color: #ffffff;
@@ -31,7 +29,7 @@
         font-weight: bold;
       }
       nav a:hover {
-        color: #99a58f; /* Muted green for hover */
+        color: #99a58f;
       }
       /* Logo styling */
       .logo img {
@@ -45,13 +43,13 @@
         padding: 20px;
         background-color: #edeae5;
       }
-      /* Content container styling */
+      /* Content Container */
       .content {
         max-width: 960px;
         margin: 20px auto;
         padding: 20px;
         background: #ffffff;
-        border-radius: 8px; /* Rounded corners */
+        border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
     </style>
@@ -61,7 +59,7 @@
     <nav>
       <div class="logo">
         <a href="#">
-          <img src="logo.png" alt="Logo">API Docs
+          <img src="https://rahoefer.github.io/project-api-docs/servicesync-mockup2.png" alt="Logo" />API Docs
         </a>
       </div>
       <div class="nav-links">
@@ -83,7 +81,7 @@
       <div id="redoc-container"></div>
     </div>
     
-    <!-- Initialize Redoc with custom theme -->
+    <!-- Initialize Redoc with custom theme and load the spec -->
     <script>
       Redoc.init(
         "https://rahoefer.github.io/project-api-docs/openapi.yaml",
@@ -111,4 +109,28 @@
                 fontSize: "13px",
                 fontFamily: "Courier, monospace",
                 color: "#e53935",
-                backgroundColor: "rgba(38, 50, 5
+                backgroundColor: "rgba(38, 50, 56, 0.05)"
+              }
+            },
+            sidebar: {
+              width: "260px",
+              backgroundColor: "#d6cabc",
+              textColor: "#252525",
+              activeTextColor: "#99a58f"
+            },
+            rightPanel: {
+              backgroundColor: "#3e4f47",
+              width: "40%",
+              textColor: "#ffffff"
+            },
+            fab: {
+              backgroundColor: "#3e4f47",
+              color: "#ffffff"
+            }
+          }
+        },
+        document.getElementById("redoc-container")
+      );
+    </script>
+  </body>
+</html>
