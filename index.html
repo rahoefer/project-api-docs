@@ -38,26 +38,52 @@
         vertical-align: middle;
         margin-right: 10px;
       }
-           /* Homepage Section */
-      .homepage {
-        max-width: 960px;
-        margin: 20px auto;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /* Two-column layout for the logo and text */
+      .homepage-content {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        align-items: center;
+        gap: 20px;       /* Space between columns */
+      }
+
+      /* Logo container */
+      .logo-container {
+        flex: 0 0 auto; /* Prevents the logo from stretching */
+      }
+      .logo-container img {
+        max-width: 200px; /* Adjust as needed */
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Text container */
+      .text-container {
+        flex: 1; /* Takes remaining space for text */
         text-align: left;
       }
-      .homepage h1 {
+
+      /* Larger text for headings */
+      .text-container h1 {
+        font-size: 2em;
         margin-top: 0;
       }
-      .homepage p {
+      .text-container h2 {
+        font-size: 1.5em;
+        margin-top: 0.5em;
+      }
+      .text-container h3 {
+        margin-top: 1.2em;
+      }
+      .text-container p,
+      .text-container ul {
         line-height: 1.6;
       }
-      .homepage ul {
+      .text-container ul {
         list-style: disc;
         margin-left: 20px;
       }
+      
+      /* Button container */
       .btn-container {
         margin-top: 20px;
       }
@@ -90,7 +116,7 @@
     <nav>
       <div class="logo">
         <a href="#">
-          <img src="https://rahoefer.github.io/project-api-docs/servicesync-mockup2.png" alt="Logo" />ServiceSync API Hub
+          <img src="https://rahoefer.github.io/project-api-docs/resizedservicesynclogo2.png" alt="Logo" />ServiceSync API Hub
         </a>
       </div>
       <div class="nav-links">
@@ -102,43 +128,51 @@
     
     <!-- Homepage Content -->
     <section class="homepage" id="home">
-            <!-- Larger logo on the homepage -->
-      <img 
-        src="https://rahoefer.github.io/project-api-docs/servicesync-mockup1.png" 
-        alt="ServiceSync Logo" 
-        class="homepage-logo"
-      />
-      <h1>Welcome to ServiceSync API Hub</h1>
-      <h2>Seamless Customer Feedback Management with APIs</h2>
-      <p>
-        In today’s competitive market, understanding customer sentiment is key to delivering outstanding experiences. The ServiceSync Customer Feedback API empowers enterprises to effortlessly collect, analyze, and act on customer feedback in real time.
-      </p>
-      <p>With our API, you can:</p>
-      <ul>
-        <li>✅ Automate Feedback Collection – Gather insights from multiple channels, including email, chat, web forms, and surveys.</li>
-        <li>✅ Gain Actionable Insights – Leverage structured feedback data to improve customer experience.</li>
-        <li>✅ Streamline Response Management – Automatically categorize, tag, and route feedback to the right teams.</li>
-        <li>✅ Enhance Decision-Making – Integrate with your CRM and analytics tools for data-driven improvements.</li>
-      </ul>
-      <h3>What You’ll Find in This Portal</h3>
-      <p>
-        The ServiceSync API Portal provides everything you need to seamlessly integrate our Customer Feedback API into your systems. Here’s what you’ll discover:
-      </p>
-      <ul>
-        <li>Comprehensive API Documentation – Detailed endpoints, request/response examples, and use cases.</li>
-        <li>Quick Start Guide – Step-by-step setup instructions to help you integrate in minutes.</li>
-        <li>Authentication & Security – Learn about API keys, OAuth, and data protection best practices.</li>
-        <li>Error Handling & Troubleshooting – Common issues and solutions to ensure smooth operation.</li>
-        <li>SDKs & Code Samples – Ready-to-use snippets for popular programming languages.</li>
-        <li>Best Practices & Use Cases – Proven strategies for maximizing the value of customer feedback.</li>
-      </ul>
-      <h3>Get Started Today</h3>
-      <p>
-        Unlock the power of real-time customer insights with ServiceSync’s Customer Feedback API.
-      </p>
-      <div class="btn-container">
-        <a href="#docs" class="btn">📖 Explore the Documentation</a>
-        <a href="#integrate" class="btn">🚀 Start Integrating</a>
+      <div class="homepage-content">
+        <!-- Logo Column -->
+        <div class="logo-container">
+          <img
+            src="https://rahoefer.github.io/project-api-docs/resizedservicesynclogo1.png"
+            alt="ServiceSync Logo"
+          />
+        </div>
+
+        <!-- Text Column -->
+        <div class="text-container">
+          <h1>Welcome to ServiceSync API Hub</h1>
+          <h2>Seamless Customer Feedback Management with APIs</h2>
+          <p>
+            In today’s competitive market, understanding customer sentiment is key to delivering outstanding experiences. 
+            The ServiceSync Customer Feedback API empowers enterprises to effortlessly collect, analyze, and act on customer feedback in real time.
+          </p>
+          <p>With our API, you can:</p>
+          <ul>
+            <li>✅ Automate Feedback Collection – Gather insights from multiple channels, including email, chat, web forms, and surveys.</li>
+            <li>✅ Gain Actionable Insights – Leverage structured feedback data to improve customer experience.</li>
+            <li>✅ Streamline Response Management – Automatically categorize, tag, and route feedback to the right teams.</li>
+            <li>✅ Enhance Decision-Making – Integrate with your CRM and analytics tools for data-driven improvements.</li>
+          </ul>
+          <h3>What You’ll Find in This Portal</h3>
+          <p>
+            The ServiceSync API Portal provides everything you need to seamlessly integrate our Customer Feedback API into your systems. Here’s what you’ll discover:
+          </p>
+          <ul>
+            <li>Comprehensive API Documentation – Detailed endpoints, request/response examples, and use cases.</li>
+            <li>Quick Start Guide – Step-by-step setup instructions to help you integrate in minutes.</li>
+            <li>Authentication & Security – Learn about API keys, OAuth, and data protection best practices.</li>
+            <li>Error Handling & Troubleshooting – Common issues and solutions to ensure smooth operation.</li>
+            <li>SDKs & Code Samples – Ready-to-use snippets for popular programming languages.</li>
+            <li>Best Practices & Use Cases – Proven strategies for maximizing the value of customer feedback.</li>
+          </ul>
+          <h3>Get Started Today</h3>
+          <p>
+            Unlock the power of real-time customer insights with ServiceSync’s Customer Feedback API.
+          </p>
+          <div class="btn-container">
+            <a href="#docs" class="btn">📖 Explore the Documentation</a>
+            <a href="#integrate" class="btn">🚀 Start Integrating</a>
+          </div>
+        </div>
       </div>
     </section>
     
