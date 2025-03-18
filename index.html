@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customer Feedback API Documentation</title>
+    <title>ServiceSync API Hub</title>
     <!-- Load Redoc from CDN -->
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
     <style>
@@ -12,10 +12,11 @@
         margin: 0;
         font-family: Arial, sans-serif;
         background-color: #edeae5;
+        color: #252525;
       }
       /* Top Navigation */
       nav {
-        background-color: #3e4f47;
+        background-color: #d6cabc; /* Lighter background */
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
@@ -23,7 +24,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
       nav a {
-        color: #ffffff;
+        color: #252525;
         text-decoration: none;
         margin: 0 10px;
         font-weight: bold;
@@ -37,13 +38,43 @@
         vertical-align: middle;
         margin-right: 10px;
       }
-      /* Page Header */
-      .header {
-        text-align: center;
+           /* Homepage Section */
+      .homepage {
+        max-width: 960px;
+        margin: 20px auto;
         padding: 20px;
-        background-color: #edeae5;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: left;
       }
-      /* Content Container */
+      .homepage h1 {
+        margin-top: 0;
+      }
+      .homepage p {
+        line-height: 1.6;
+      }
+      .homepage ul {
+        list-style: disc;
+        margin-left: 20px;
+      }
+      .btn-container {
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #3e4f47;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+      .btn:hover {
+        background-color: #99a58f;
+      }
+      /* API Documentation Section */
       .content {
         max-width: 960px;
         margin: 20px auto;
@@ -59,27 +90,65 @@
     <nav>
       <div class="logo">
         <a href="#">
-          <img src="https://rahoefer.github.io/project-api-docs/servicesync-mockup2.png" alt="Logo" />API Docs
+          <img src="logo.png" alt="Logo" />ServiceSync API Hub
         </a>
       </div>
       <div class="nav-links">
-        <a href="https://rahoefer.github.io/project-api-docs/">Home</a>
-        <a href="https://rahoefer.github.io/other-docs/">Other Docs</a>
+        <a href="#home">Home</a>
+        <a href="#docs">Documentation</a>
+        <a href="#integrate">Integration</a>
       </div>
     </nav>
     
-    <!-- Page Header -->
-    <div class="header">
-      <h1>Customer Feedback API Documentation</h1>
+    <!-- Homepage Content -->
+    <section class="homepage" id="home">
+      <h1>Welcome to ServiceSync API Hub</h1>
+      <h2>Seamless Customer Feedback Management with APIs</h2>
+      <h3>Why Choose ServiceSync’s Customer Feedback API?</h3>
       <p>
-        This API provides endpoints to submit and manage customer feedback. It includes endpoints to create, retrieve, update, and delete feedback entries, along with detailed error codes and response messages.
+        In today’s competitive market, understanding customer sentiment is key to delivering outstanding experiences. The ServiceSync Customer Feedback API empowers enterprises to effortlessly collect, analyze, and act on customer feedback in real time.
       </p>
-    </div>
+      <p>With our API, you can:</p>
+      <ul>
+        <li>✅ Automate Feedback Collection – Gather insights from multiple channels, including email, chat, web forms, and surveys.</li>
+        <li>✅ Gain Actionable Insights – Leverage structured feedback data to improve customer experience.</li>
+        <li>✅ Streamline Response Management – Automatically categorize, tag, and route feedback to the right teams.</li>
+        <li>✅ Enhance Decision-Making – Integrate with your CRM and analytics tools for data-driven improvements.</li>
+      </ul>
+      <h3>What You’ll Find in This Portal</h3>
+      <p>
+        The ServiceSync API Portal provides everything you need to seamlessly integrate our Customer Feedback API into your systems. Here’s what you’ll discover:
+      </p>
+      <ul>
+        <li>Comprehensive API Documentation – Detailed endpoints, request/response examples, and use cases.</li>
+        <li>Quick Start Guide – Step-by-step setup instructions to help you integrate in minutes.</li>
+        <li>Authentication & Security – Learn about API keys, OAuth, and data protection best practices.</li>
+        <li>Error Handling & Troubleshooting – Common issues and solutions to ensure smooth operation.</li>
+        <li>SDKs & Code Samples – Ready-to-use snippets for popular programming languages.</li>
+        <li>Best Practices & Use Cases – Proven strategies for maximizing the value of customer feedback.</li>
+      </ul>
+      <h3>Get Started Today</h3>
+      <p>
+        Unlock the power of real-time customer insights with ServiceSync’s Customer Feedback API.
+      </p>
+      <div class="btn-container">
+        <a href="#docs" class="btn">📖 Explore the Documentation</a>
+        <a href="#integrate" class="btn">🚀 Start Integrating</a>
+      </div>
+    </section>
     
-    <!-- Redoc Container -->
-    <div class="content">
+    <!-- API Documentation Section -->
+    <section class="content" id="docs">
       <div id="redoc-container"></div>
-    </div>
+    </section>
+    
+    <!-- Optionally, add an Integration Section -->
+    <section class="content" id="integrate">
+      <h2>Integration Guide</h2>
+      <p>
+        [Your integration guide or additional information can go here.]
+      </p>
+    </section>
     
     <!-- Initialize Redoc with custom theme and load the spec -->
     <script>
@@ -114,7 +183,7 @@
             },
             sidebar: {
               width: "260px",
-              backgroundColor: "#d6cabc",
+              backgroundColor: "#d6cabc",  /* Medium beige */
               textColor: "#252525",
               activeTextColor: "#99a58f"
             },
