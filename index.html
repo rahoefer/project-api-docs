@@ -1,24 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Redoc</title>
-    <!-- needed for adaptive design -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
-
-    <!--
-    Redoc doesn't change outer page styles
-    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Feedback API Documentation</title>
+    <!-- Load Redoc from CDN -->
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
     <style>
+      /* Top Navigation Bar */
+      nav {
+        background-color: #fde8e3; /* light background */
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      nav a {
+        color: #3a2b32; /* dark accent for text */
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #8a6c78; /* complementary accent on hover */
+      }
+      
       body {
         margin: 0;
-        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+      }
+      
+      .header {
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+      }
+      
+      .content {
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
     </style>
   </head>
   <body>
-    <redoc spec-url="https://rahoefer.github.io/project-api-docs/openapi.yaml"></redoc>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <!-- Top Navigation -->
+    <nav>
+      <div class="logo">
+        <a href="#">API Docs</a>
+      </div>
+      <div class="nav-links">
+        <a href="https://rahoefer.github.io/project-api-docs/">Home</a>
+        <a href="https://rahoefer.github.io/other-docs/">Other Docs</a>
+      </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <div class="header">
+      <h1>Customer Feedback API Documentation</h1>
+      <p>This API provides endpoints to submit and manage customer feedback. It includes endpoints to create, retrieve, update, and delete feedback entries, along with detailed error codes and response messages.</p>
+    </div>
+    
+    <!-- Redoc Container -->
+    <div class="content">
+      <div id="redoc-container"></div>
+    </div>
+    
+    <!-- Manually initialize Redoc with configuration -->
+    <script>
+      Redoc.init(
+        "https://rahoefer.github.io/project-api-docs/openapi.yaml",
+        {
+          requiredPropsFirst: true,
+          theme: {
+            spacing: {
+              unit: 5,
+              sectionHorizontal: 40,
+              sectionVertical: 40
+            },
+            colors: {
+              tonalOffset: 0.3
+            },
+            typography: {
+              fontSize: "14px",
+              lineHeight: "1.5em",
+              fontFamily: "Roboto, sans-serif",
+              headings: {
+                fontFamily: "Montserrat, sans-serif",
+                fontWeight: "400",
+                lineHeight: "1.6em"
+              },
+              code: {
+                fontSize: "13px",
+                fontFamily: "Courier, monospace",
+                color: "#e53935",
+                backgroundColor: "rgba(38, 50, 56, 0.05)"
+              }
+            },
+            sidebar: {
+              width: "260px",
+              backgroundColor: "#fde8e3",  /* light color for sidebar background */
+              textColor: "#3a2b32",        /* dark text color */
+              activeTextColor: "#8a6c78"   /* complementary active text color */
+            },
+            rightPanel: {
+              backgroundColor: "#3a2b32", /* dark accent for right panel */
+              width: "40%",
+              textColor: "#ffffff"
+            },
+            fab: {
+              backgroundColor: "#3a2b32",
+              color: "#ffffff"
+            }
+          }
+        },
+        document.getElementById("redoc-container")
+      );
+    </script>
   </body>
 </html>
