@@ -9,41 +9,38 @@
     <style>
       /* Top Navigation Bar */
       nav {
-        background-color: #fde8e3; /* light background */
+        background-color: #2196f3; /* Medium blue */
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
       nav a {
-        color: #3a2b32; /* dark accent for text */
+        color: #ffffff; /* White text */
         text-decoration: none;
         margin: 0 10px;
         font-weight: bold;
       }
       nav a:hover {
-        color: #8a6c78; /* complementary accent on hover */
+        color: #c5e1a5; /* Light green on hover */
       }
-      
       body {
         margin: 0;
         font-family: Arial, sans-serif;
         background-color: #ffffff;
       }
-      
       .header {
         text-align: center;
         padding: 20px;
-        background-color: #fff;
+        background-color: #ffffff;
       }
-      
       .content {
         max-width: 960px;
         margin: 20px auto;
         padding: 20px;
-        background: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
     </style>
   </head>
@@ -62,7 +59,9 @@
     <!-- Page Header -->
     <div class="header">
       <h1>Customer Feedback API Documentation</h1>
-      <p>This API provides endpoints to submit and manage customer feedback. It includes endpoints to create, retrieve, update, and delete feedback entries, along with detailed error codes and response messages.</p>
+      <p>
+        This API provides endpoints to submit and manage customer feedback. It includes endpoints to create, retrieve, update, and delete feedback entries, along with detailed error codes and response messages.
+      </p>
     </div>
     
     <!-- Redoc Container -->
@@ -70,7 +69,7 @@
       <div id="redoc-container"></div>
     </div>
     
-    <!-- Manually initialize Redoc with configuration -->
+    <!-- Initialize Redoc with custom theme -->
     <script>
       Redoc.init(
         "https://rahoefer.github.io/project-api-docs/openapi.yaml",
@@ -103,17 +102,17 @@
             },
             sidebar: {
               width: "260px",
-              backgroundColor: "#fde8e3",  /* light color for sidebar background */
-              textColor: "#3a2b32",        /* dark text color */
-              activeTextColor: "#8a6c78"   /* complementary active text color */
+              backgroundColor: "#e3f2fd",  /* Light blue */
+              textColor: "#0d47a1",        /* Dark blue */
+              activeTextColor: "#388e3c"   /* Green accent */
             },
             rightPanel: {
-              backgroundColor: "#3a2b32", /* dark accent for right panel */
+              backgroundColor: "#0d47a1",  /* Dark blue */
               width: "40%",
               textColor: "#ffffff"
             },
             fab: {
-              backgroundColor: "#3a2b32",
+              backgroundColor: "#0d47a1",
               color: "#ffffff"
             }
           }
