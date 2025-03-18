@@ -7,40 +7,52 @@
     <!-- Load Redoc from CDN -->
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
     <style>
+      /* Global styles */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #edeae5; /* Light background */
+      }
       /* Top Navigation Bar */
       nav {
-        background-color: #2196f3; /* Medium blue */
+        background-color: #3e4f47; /* Dark muted blue-green */
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
       nav a {
-        color: #ffffff; /* White text */
+        color: #ffffff;
         text-decoration: none;
         margin: 0 10px;
         font-weight: bold;
       }
       nav a:hover {
-        color: #c5e1a5; /* Light green on hover */
+        color: #99a58f; /* Muted green for hover */
       }
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #ffffff;
+      /* Logo styling */
+      .logo img {
+        height: 40px;
+        vertical-align: middle;
+        margin-right: 10px;
       }
+      /* Page Header */
       .header {
         text-align: center;
         padding: 20px;
-        background-color: #ffffff;
+        background-color: #edeae5;
       }
+      /* Content container styling */
       .content {
         max-width: 960px;
         margin: 20px auto;
         padding: 20px;
         background: #ffffff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
     </style>
   </head>
@@ -48,7 +60,9 @@
     <!-- Top Navigation -->
     <nav>
       <div class="logo">
-        <a href="#">API Docs</a>
+        <a href="#">
+          <img src="logo.png" alt="Logo">API Docs
+        </a>
       </div>
       <div class="nav-links">
         <a href="https://rahoefer.github.io/project-api-docs/">Home</a>
@@ -97,28 +111,4 @@
                 fontSize: "13px",
                 fontFamily: "Courier, monospace",
                 color: "#e53935",
-                backgroundColor: "rgba(38, 50, 56, 0.05)"
-              }
-            },
-            sidebar: {
-              width: "260px",
-              backgroundColor: "#e3f2fd",  /* Light blue */
-              textColor: "#0d47a1",        /* Dark blue */
-              activeTextColor: "#388e3c"   /* Green accent */
-            },
-            rightPanel: {
-              backgroundColor: "#0d47a1",  /* Dark blue */
-              width: "40%",
-              textColor: "#ffffff"
-            },
-            fab: {
-              backgroundColor: "#0d47a1",
-              color: "#ffffff"
-            }
-          }
-        },
-        document.getElementById("redoc-container")
-      );
-    </script>
-  </body>
-</html>
+                backgroundColor: "rgba(38, 50, 5
