@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: API for collecting and managing customer feedback.
 servers:
-  - url: https://your-api-domain.com
+  - url: https://api1-project-files.onrender.com
 paths:
   /feedback:
     post:
