@@ -176,12 +176,10 @@
         }
       }
 
-      /* ==== TWO‑COLUMN OVERRIDE ==== */
+/* Hide Redoc’s right panel when .two-col is applied */
 #redoc-container.two-col .redoc {
-  /* Change from 3‑column (sidebar | main | right) → 2‑column (sidebar | main) */
   grid-template-columns: 260px 1fr !important;
 }
-
 #redoc-container.two-col .right-panel {
   display: none !important;
 }
@@ -276,16 +274,16 @@
     </section>
 
      <!-- Initialize Redoc with custom theme and load the spec -->
- <script>
-  const OPENAPI_URL = "https://rahoefer.github.io/project-api-docs/openapi.yaml";
+<script>
   const container = document.getElementById("redoc-container");
+  const SPEC_URL = "https://rahoefer.github.io/project-api-docs/openapi.yaml";
 
-  // Single initial Redoc render (3‑column by default)
-  Redoc.init(OPENAPI_URL, {
+  // Single initial Redoc render (3‑column default)
+  Redoc.init(SPEC_URL, {
     requiredPropsFirst: true,
     theme: {
       sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
-      rightPanel: { backgroundColor: "#e0e0e0", textColor: "#333333", width: "45%" },
+      rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff", width: "45%" },
       fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
       spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
       colors: { tonalOffset: 0.3 },
@@ -293,13 +291,9 @@
     }
   }, container);
 
-  // Toggle event listeners
-  document.getElementById("two-col-btn").addEventListener("click", () => {
-    container.classList.add("two-col");
-  });
-  document.getElementById("three-col-btn").addEventListener("click", () => {
-    container.classList.remove("two-col");
-  });
+  // Toggle two‑column vs three‑column
+  document.getElementById("two-col-btn").onclick = () => container.classList.add("two-col");
+  document.getElementById("three-col-btn").onclick = () => container.classList.remove("two-col");
 </script>
   </body>
 </html>
