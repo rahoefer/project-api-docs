@@ -249,13 +249,6 @@
     </section>
 
     <!-- API Documentation Section -->
-<section class="content" id="docs">
-  <div class="layout-toggle" style="margin-bottom:16px; text-align:right;">
-    <button id="two-col-btn" class="btn btn-secondary">2 columns</button>
-    <button id="three-col-btn" class="btn btn-primary">3 columns</button>
-  </div>
-  <div id="redoc-container"></div>
-</section>
 
     <!-- Integration Section -->
     <section class="content" id="integrate">
@@ -266,39 +259,22 @@
     </section>
 
      <!-- Initialize Redoc with custom theme and load the spec -->
-<!-- Replace everything from <script> to </script> with this -->
 <script>
-  const OPENAPI_URL = "https://rahoefer.github.io/project-api-docs/openapi.yaml";
-  const container = document.getElementById("redoc-container");
-
-  function initRedoc(columns = 3) {
-    // Clear out any existing documentation
-    container.innerHTML = "";
-
-    Redoc.init(
-      OPENAPI_URL,
-      {
-        requiredPropsFirst: true,
-        theme: {
-          sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
-          rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff" },
-          fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
-          spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
-          colors: { tonalOffset: 0.3 },
-          typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" },
-          layout: columns === 3 ? "three-panel" : "stacked"
-        }
-      },
-      container
-    );
-  }
-
-  // Initial render in 3‑column mode
-  initRedoc(3);
-
-  document.getElementById("two-col-btn").onclick = () => initRedoc(2);
-  document.getElementById("three-col-btn").onclick = () => initRedoc(3);
+  Redoc.init(
+    "https://rahoefer.github.io/project-api-docs/openapi.yaml",
+    {
+      requiredPropsFirst: true,
+      theme: {
+        sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
+        rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff", width: "45%" },
+        fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
+        spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
+        colors: { tonalOffset: 0.3 },
+        typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" }
+      }
+    },
+    document.getElementById("redoc-container")
+  );
 </script>
-
   </body>
 </html>
