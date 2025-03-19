@@ -263,7 +263,7 @@
       </p>
     </section>
 
-    <!-- Initialize Redoc with custom theme and load the spec -->
+     <!-- Initialize Redoc with custom theme and load the spec -->
     <script>
       Redoc.init(
         "https://rahoefer.github.io/project-api-docs/openapi.yaml",
@@ -287,4 +287,32 @@
                 fontWeight: "400",
                 lineHeight: "1.6em"
               },
-              code:
+              code: {
+                fontSize: "13px",
+                fontFamily: "Courier, monospace",
+                color: "#e53935",
+                backgroundColor: "rgba(38, 50, 56, 0.05)"
+              }
+            },
+            sidebar: {
+              width: "260px",
+              backgroundColor: "#d6cabc",  /* Medium beige */
+              textColor: "#252525",
+              activeTextColor: "#99a58f"
+            },
+            rightPanel: {
+              backgroundColor: "#3e4f47",
+              width: "45%",
+              textColor: "#ffffff"
+            },
+            fab: {
+              backgroundColor: "#3e4f47",
+              color: "#ffffff"
+            }
+          }
+        },
+        document.getElementById("redoc-container")
+      );
+    </script>
+  </body>
+</html>
