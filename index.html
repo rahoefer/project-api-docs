@@ -213,6 +213,23 @@
   line-height: 1.6;
   color: #555555;
 }
+            
+      /* PORTAL CARDS */
+      {
+      .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1rem;
+}
+.card {
+  background:#fff; padding:1rem; border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+  text-align:center;
+}
+.card img { width:32px; margin-bottom:.5rem; }
+.card h4 { margin:0 0 .25rem; font-size:1.1rem; }
+.card p { font-size:.9rem; color:#555; }
+      }
     </style>
   </head>
   <body>
