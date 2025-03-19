@@ -175,6 +175,44 @@
           padding: 0.65rem 1rem;
         }
       }
+      
+      /* CAPABILITIES CARDS */
+.capabilities-cards {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.capabilities-cards h3 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  color: #3e4f47;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
+}
+.card-icon {
+  width: 40px;
+  margin-bottom: 12px;
+}
+.card h4 {
+  margin: 8px 0;
+  font-size: 1.25rem;
+  color: #252525;
+}
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555555;
+}
     </style>
   </head>
   <body>
@@ -221,12 +259,31 @@
       </p>
       <h3>Key Capabilities</h3>
       <p>Our API is designed to simplify feedback management:</p>
-      <ul>
-        <li><b>Automate Collection:</b> Gather input from email, chat, web forms, and surveys without manual effort.</li>
-        <li><b>Categorize and Organize:</b> Tag and sort feedback to surface trends and priorities.</li>
-        <li><b>Route to the Right Teams:</b> Ensure customer concerns are addressed efficiently by directing them to the appropriate departments.</li>
-        <li><b>Integrate with Existing Tools:</b> Connect with CRMs, analytics platforms, and support systems for better visibility and actionability.</li>
-      </ul>
+<section class="capabilities-cards" id="capabilities">
+  <h3>Key Capabilities</h3>
+  <div class="cards-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/40" alt="Automate Icon" class="card-icon"/>
+      <h4>Automate Collection</h4>
+      <p>Gather feedback automatically from email, chat, web forms, and surveys.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/40" alt="Categorize Icon" class="card-icon"/>
+      <h4>Categorize & Organize</h4>
+      <p>Tag and sort feedback to surface trends and priorities effortlessly.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/40" alt="Route Icon" class="card-icon"/>
+      <h4>Route to Teams</h4>
+      <p>Automatically direct customer concerns to the right departments for fast resolution.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/40" alt="Integrate Icon" class="card-icon"/>
+      <h4>Seamless Integration</h4>
+      <p>Connect feedback data to CRMs, analytics platforms, and support systems in minutes.</p>
+    </div>
+  </div>
+</section>
       <h3>What’s in This Portal</h3>
       <p>
         This portal provides the resources needed to integrate and use the Customer Feedback API:
