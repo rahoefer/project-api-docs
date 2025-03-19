@@ -23,7 +23,7 @@
       /* --------------- TOP NAVIGATION --------------- */
       nav {
         background-color: #ffffff
-        padding: 10px 20px;
+        padding: 12px 22px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -249,9 +249,13 @@
     </section>
 
     <!-- API Documentation Section -->
-    <section class="content" id="docs">
-      <div id="redoc-container"></div>
-    </section>
+<section class="content" id="docs">
+  <div class="layout-toggle" style="margin-bottom:16px; text-align:right;">
+    <button id="two-col-btn" class="btn btn-secondary">2 columns</button>
+    <button id="three-col-btn" class="btn btn-primary">3 columns</button>
+  </div>
+  <div id="redoc-container"></div>
+</section>
 
     <!-- Integration Section -->
     <section class="content" id="integrate">
@@ -262,55 +266,30 @@
     </section>
 
      <!-- Initialize Redoc with custom theme and load the spec -->
-    <script>
-      Redoc.init(
-        "https://rahoefer.github.io/project-api-docs/openapi.yaml",
-        {
-          requiredPropsFirst: true,
-          theme: {
-            spacing: {
-              unit: 5,
-              sectionHorizontal: 40,
-              sectionVertical: 40
-            },
-            colors: {
-              tonalOffset: 0.3
-            },
-            typography: {
-              fontSize: "14px",
-              lineHeight: "1.5em",
-              fontFamily: "Roboto, sans-serif",
-              headings: {
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: "400",
-                lineHeight: "1.6em"
-              },
-              code: {
-                fontSize: "13px",
-                fontFamily: "Courier, monospace",
-                color: "#e53935",
-                backgroundColor: "rgba(38, 50, 56, 0.05)"
-              }
-            },
-            sidebar: {
-              width: "260px",
-              backgroundColor: "#f7f7f7",
-              textColor: "#333333",
-              activeTextColor: "#000000"
-            },
-            rightPanel: {
-              backgroundColor: "#2e2e2e",
-              width: "45%",
-              textColor: "#f7f7f7"
-            },
-            fab: {
-              backgroundColor: "#333333",
-              color: "#ffffff"
-            }
-          }
-        },
-        document.getElementById("redoc-container")
-      );
-    </script>
+ <script>
+  const OPENAPI_URL = "https://rahoefer.github.io/project-api-docs/openapi.yaml";
+
+  function initRedoc(columns = 3) {
+    const config = {
+      requiredPropsFirst: true,
+      theme: {
+        /* copy your existing theme object here */
+        sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
+        rightPanel: { backgroundColor: "#e0e0e0", textColor: "#333333", width: columns === 3 ? "45%" : "0%" },
+        fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
+        spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
+        colors: { tonalOffset: 0.3 },
+        typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" }
+      }
+    };
+    Redoc.init(OPENAPI_URL, config, document.getElementById("redoc-container"));
+  }
+
+  // Initial load with 3 columns
+  initRedoc(3);
+
+  document.getElementById("two-col-btn").addEventListener("click", () => initRedoc(2));
+  document.getElementById("three-col-btn").addEventListener("click", () => initRedoc(3));
+</script>
   </body>
 </html>
