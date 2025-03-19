@@ -23,7 +23,7 @@
       /* --------------- TOP NAVIGATION --------------- */
       nav {
         background-color: #ffffff
-        padding: 12px 22px;
+        padding: 20px 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -272,31 +272,33 @@
   const container = document.getElementById("redoc-container");
 
   function initRedoc(columns = 3) {
-    // Clear existing Redoc content
+    // Clear out any existing documentation
     container.innerHTML = "";
+
     Redoc.init(
       OPENAPI_URL,
       {
         requiredPropsFirst: true,
         theme: {
           sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
-          rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff", width: columns === 3 ? "45%" : "0%" },
+          rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff" },
           fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
           spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
           colors: { tonalOffset: 0.3 },
-          typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" }
+          typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" },
+          layout: columns === 3 ? "three-panel" : "stacked"
         }
       },
       container
     );
   }
 
-  // Initial load in 3‑column mode
+  // Initial render in 3‑column mode
   initRedoc(3);
 
-  // Wire up the toggle buttons
   document.getElementById("two-col-btn").onclick = () => initRedoc(2);
   document.getElementById("three-col-btn").onclick = () => initRedoc(3);
 </script>
+
   </body>
 </html>
