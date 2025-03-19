@@ -175,14 +175,6 @@
           padding: 0.65rem 1rem;
         }
       }
-
-/* Hide Redoc’s right panel when .two-col is applied */
-#redoc-container.two-col .redoc {
-  grid-template-columns: 260px 1fr !important;
-}
-#redoc-container.two-col .right-panel {
-  display: none !important;
-}
     </style>
   </head>
   <body>
@@ -274,26 +266,37 @@
     </section>
 
      <!-- Initialize Redoc with custom theme and load the spec -->
+<!-- Replace everything from <script> to </script> with this -->
 <script>
+  const OPENAPI_URL = "https://rahoefer.github.io/project-api-docs/openapi.yaml";
   const container = document.getElementById("redoc-container");
-  const SPEC_URL = "https://rahoefer.github.io/project-api-docs/openapi.yaml";
 
-  // Single initial Redoc render (3‑column default)
-  Redoc.init(SPEC_URL, {
-    requiredPropsFirst: true,
-    theme: {
-      sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
-      rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff", width: "45%" },
-      fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
-      spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
-      colors: { tonalOffset: 0.3 },
-      typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" }
-    }
-  }, container);
+  function initRedoc(columns = 3) {
+    // Clear existing Redoc content
+    container.innerHTML = "";
+    Redoc.init(
+      OPENAPI_URL,
+      {
+        requiredPropsFirst: true,
+        theme: {
+          sidebar: { backgroundColor: "#f7f7f7", textColor: "#252525", activeTextColor: "#99a58f", width: "260px" },
+          rightPanel: { backgroundColor: "#2e2e2e", textColor: "#ffffff", width: columns === 3 ? "45%" : "0%" },
+          fab: { backgroundColor: "#3e4f47", color: "#ffffff" },
+          spacing: { unit: 5, sectionHorizontal: 40, sectionVertical: 40 },
+          colors: { tonalOffset: 0.3 },
+          typography: { fontSize: "14px", lineHeight: "1.5em", fontFamily: "Roboto, sans-serif" }
+        }
+      },
+      container
+    );
+  }
 
-  // Toggle two‑column vs three‑column
-  document.getElementById("two-col-btn").onclick = () => container.classList.add("two-col");
-  document.getElementById("three-col-btn").onclick = () => container.classList.remove("two-col");
+  // Initial load in 3‑column mode
+  initRedoc(3);
+
+  // Wire up the toggle buttons
+  document.getElementById("two-col-btn").onclick = () => initRedoc(2);
+  document.getElementById("three-col-btn").onclick = () => initRedoc(3);
 </script>
   </body>
 </html>
