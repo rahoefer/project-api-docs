@@ -260,38 +260,61 @@
   color: #666;
 }
 
-/* SITE FOOTER */
+/* FOOTER */
 .site-footer {
   background-color: #f7f7f7;
-  padding: 24px 0;
-  font-size: 0.875rem;
-  color: #555555;
-}
-.footer-content {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: center;
-}
-.footer-logo {
-  height: 90px;       /* Adjust logo height as needed */
-  margin-bottom: 8px;
-}
-.footer-links {
-  margin-bottom: 8px;
-}
-.footer-links a {
-  color: #3e4f47;
-  margin: 0 8px;
-  text-decoration: none;
-}
-.footer-links a:hover {
-  text-decoration: underline;
-}
-.footer-links span {
-  color: #999999;
-  margin: 0 4px;
+  padding: 40px 20px 20px;
 }
 
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  height: 60px;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  color: #3e4f47;
+  font-weight: 500;
+}
+
+.footer-links-table {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 16px 32px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px 24px;
+}
+
+.footer-links-table a {
+  color: #3e4f47;
+  font-size: 0.9rem;
+}
+
+.footer-links-table a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: #666;
+}
 
     </style>
   </head>
@@ -411,25 +434,24 @@
     document.getElementById("redoc-container")
   );
 </script>
-  
-<footer class="site-footer">
-  <div class="footer-content">
-    <img 
-      src="https://rahoefer.github.io/project-api-docs/resizedservicesynclogo1.png" 
-      alt="ServiceSync Logo" 
-      class="footer-logo"
-    />
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <span>·</span>
-      <a href="#">Terms of Service</a>
-      <span>·</span>
-      <a href="mailto:support@email.com">Support</a>
+    
+  <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="https://rahoefer.github.io/project-api-docs/resizedservicesynclogo1.png" alt="ServiceSync Logo" class="footer-logo"/>
+      <p class="footer-tagline">Seamless Customer Feedback Management</p>
     </div>
+    <div class="footer-links-table">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="mailto:support@servicesync.com">Support</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <p>© 2025 ServiceSync. All rights reserved.</p>
   </div>
 </footer>
-
 
   </body>
 </html>
