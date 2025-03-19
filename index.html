@@ -214,22 +214,51 @@
   color: #555555;
 }
             
-      /* PORTAL CARDS */
-      {
-      .cards-container {
+/* ----- PORTAL CARDS (COMPACT) ----- */
+.portal-cards {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px; /* adjust horizontal padding if needed */
+  text-align: left;
+}
+
+.portal-cards h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #3e4f47; /* or your brand color */
+}
+
+.portal-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
 }
-.card {
-  background:#fff; padding:1rem; border-radius:8px;
-  box-shadow:0 2px 4px rgba(0,0,0,0.05);
-  text-align:center;
+
+.portal-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: left;
 }
-.card img { width:32px; margin-bottom:.5rem; }
-.card h4 { margin:0 0 .25rem; font-size:1.1rem; }
-.card p { font-size:.9rem; color:#555; }
-      }
+
+.portal-card img {
+  width: 24px; /* smaller icon size */
+  margin-bottom: 8px;
+}
+
+.portal-card h4 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.portal-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
     </style>
   </head>
   <body>
@@ -291,29 +320,30 @@
 </section>
 <section class="portal-cards">
   <h3>Everything you need to get started</h3>
-  <div class="cards-container">
-    <div class="card">
-      <img src="https://via.placeholder.com/32" alt="Docs icon"/>
+  <div class="portal-cards-container">
+    <div class="portal-card">
+      <img src="https://via.placeholder.com/24" alt="Docs icon" />
       <h4>API Reference</h4>
-      <p>Endpoints, examples, and use cases.</p>
+      <p>Endpoints and examples</p>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/32" alt="Quick start icon"/>
+    <div class="portal-card">
+      <img src="https://via.placeholder.com/24" alt="Quick start icon" />
       <h4>Quick Start Guide</h4>
-      <p>Integrate in minutes.</p>
+      <p>Integrate in minutes</p>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/32" alt="Security icon"/>
+    <div class="portal-card">
+      <img src="https://via.placeholder.com/24" alt="Security icon" />
       <h4>Security</h4>
-      <p>API keys, OAuth, and best practices.</p>
+      <p>API keys and best practices</p>
     </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/32" alt="Troubleshoot icon"/>
+    <div class="portal-card">
+      <img src="https://via.placeholder.com/24" alt="Troubleshoot icon" />
       <h4>Error Handling</h4>
-      <p>Common issues and fixes.</p>
+      <p>Common issues and solutions</p>
     </div>
   </div>
 </section>
+
     </section>
 
     <!-- API Documentation Section -->
