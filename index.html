@@ -7,14 +7,20 @@
     <!-- Load Redoc from CDN -->
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
     <style>
-      /* Global Styles */
+      /* ---------------- GLOBAL STYLES ---------------- */
       body {
         margin: 0;
         font-family: Arial, sans-serif;
         background-color: #edeae5;
         color: #252525;
       }
-      /* Top Navigation */
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* --------------- TOP NAVIGATION --------------- */
       nav {
         background-color: #d6cabc; /* Lighter background */
         padding: 10px 20px;
@@ -25,56 +31,110 @@
       }
       nav a {
         color: #252525;
-        text-decoration: none;
         margin: 0 10px;
         font-weight: bold;
       }
       nav a:hover {
         color: #99a58f;
       }
-      /* Logo styling */
       .logo img {
         height: 50px;
         vertical-align: middle;
         margin-right: 10px;
       }
-           /* Homepage Section */
-      .homepage {
+
+      /* --------------- HERO SECTION --------------- */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 40px 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .hero-content {
+        flex: 1;
+        margin-right: 20px;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #333333;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: #555555;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 1rem; /* space between buttons */
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      /* --------------- BUTTON STYLES --------------- */
+      .btn {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      /* Primary button */
+      .btn-primary {
+        background-color: #5865f2;
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        background-color: #4752c4;
+      }
+      /* Secondary button */
+      .btn-secondary {
+        background-color: #ffffff;
+        color: #5865f2;
+        border: 2px solid #5865f2;
+      }
+      .btn-secondary:hover {
+        background-color: #f2f3fc;
+      }
+
+      /* --------------- HOMEPAGE DETAILS SECTION --------------- */
+      .homepage-details {
         max-width: 960px;
         margin: 20px auto;
         padding: 20px;
         background: #ffffff;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         text-align: left;
       }
-      .homepage h1 {
+      .homepage-details h2,
+      .homepage-details h3 {
         margin-top: 0;
       }
-      .homepage p {
-        line-height: 1.6;
-      }
-      .homepage ul {
+      .homepage-details ul {
         list-style: disc;
         margin-left: 20px;
       }
-      .btn-container {
-        margin-top: 20px;
-      }
-      .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-right: 10px;
-        background-color: #3e4f47;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-      }
-      .btn:hover {
-        background-color: #99a58f;
-      }
-      /* API Documentation Section */
+
+      /* --------------- API DOCUMENTATION SECTION --------------- */
       .content {
         max-width: 960px;
         margin: 20px auto;
@@ -82,6 +142,40 @@
         background: #ffffff;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --------------- RESPONSIVE BREAKPOINTS --------------- */
+      @media (max-width: 992px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+        .hero-content {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+        .hero-image img {
+          max-width: 80%;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 1.8rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .btn {
+          font-size: 0.9rem;
+          padding: 0.65rem 1rem;
+        }
       }
     </style>
   </head>
@@ -99,76 +193,76 @@
         <a href="#integrate">Integration</a>
       </div>
     </nav>
-    
-  <!-- HERO SECTION (remains as your primary hero) -->
-<section class="hero" id="home">
-  <!-- Left Column: Text -->
-  <div class="hero-content">
-    <h1>Powerful APIs for Smarter Support</h1>
-    <p>Automate feedback collection and get insights that matter.</p>
-    <div class="hero-buttons">
-      <a href="#docs" class="btn-primary">Integrate now</a>
-      <a href="#docs" class="btn-secondary">Explore APIs</a>
-    </div>
-  </div>
-  <!-- Right Column: Image -->
-  <div class="hero-image">
-    <img 
-      src="https://rahoefer.github.io/project-api-docs/heroimage1.png" 
-      alt="Rocket Launch Illustration" 
-    />
-  </div>
-</section>
 
-<!-- ADDITIONAL HOMEPAGE CONTENT (merged old homepage text) -->
-<section class="homepage-details" id="details" style="max-width:960px; margin:20px auto; padding:20px; background:#ffffff; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); text-align:left;">
-  <h2>ServiceSync API Hub</h2>
-  <h3>Customer Feedback API</h3>
-  <p>
-    Understanding customer sentiment is critical in a competitive market. The ServiceSync Customer Feedback API enables enterprises to collect, manage, and act on customer feedback from multiple channels—all in a structured, scalable way.
-  </p>
-  <h3>Key Capabilities</h3>
-  <p>Our API is designed to simplify feedback management:</p>
-  <ul>
-    <li><b>Automate Collection:</b> Gather input from email, chat, web forms, and surveys without manual effort.</li>
-    <li><b>Categorize and Organize:</b> Tag and sort feedback to surface trends and priorities.</li>
-    <li><b>Route to the Right Teams:</b> Ensure customer concerns are addressed efficiently by directing them to the appropriate departments.</li>
-    <li><b>Integrate with Existing Tools:</b> Connect with CRMs, analytics platforms, and support systems for better visibility and actionability.</li>
-  </ul>
-  <h3>What’s in This Portal</h3>
-  <p>
-    This portal provides the resources needed to integrate and use the Customer Feedback API:
-  </p>
-  <ul>
-    <li><b>Comprehensive API Documentation</b> – Detailed endpoints, request/response examples, and use cases.</li>
-    <li><b>Quick Start Guide</b> – Step-by-step setup instructions to help you integrate in minutes.</li>
-    <li><b>Authentication and Security</b> – Learn about API keys, OAuth, and data protection best practices.</li>
-    <li><b>Error Handling and Troubleshooting</b> – Common issues and solutions to ensure smooth operation.</li>
-    <li><b>Best Practices and Use Cases</b> – Proven strategies for maximizing the value of customer feedback.</li>
-  </ul>
-  <h3>Get Started Today</h3>
-  <p>
-    Unlock the power of real-time customer insights with ServiceSync’s Customer Feedback API.
-  </p>
-  <div class="btn-container">
-    <a href="#docs" class="btn">📖 Explore the Documentation</a>
-    <a href="#integrate" class="btn">🚀 Start Integrating</a>
-  </div>
-</section>
-    
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <!-- Left Column: Text -->
+      <div class="hero-content">
+        <h1>Powerful APIs for Smarter Support</h1>
+        <p>Automate feedback collection and get insights that matter.</p>
+        <div class="hero-buttons">
+          <a href="#docs" class="btn btn-primary">Integrate now</a>
+          <a href="#docs" class="btn btn-secondary">Explore APIs</a>
+        </div>
+      </div>
+      <!-- Right Column: Image -->
+      <div class="hero-image">
+        <img
+          src="https://rahoefer.github.io/project-api-docs/heroimage1.png"
+          alt="Rocket Launch Illustration"
+        />
+      </div>
+    </section>
+
+    <!-- ADDITIONAL HOMEPAGE CONTENT -->
+    <section class="homepage-details" id="details">
+      <h2>ServiceSync API Hub</h2>
+      <h3>Customer Feedback API</h3>
+      <p>
+        Understanding customer sentiment is critical in a competitive market. The ServiceSync Customer Feedback API enables enterprises to collect, manage, and act on customer feedback from multiple channels—all in a structured, scalable way.
+      </p>
+      <h3>Key Capabilities</h3>
+      <p>Our API is designed to simplify feedback management:</p>
+      <ul>
+        <li><b>Automate Collection:</b> Gather input from email, chat, web forms, and surveys without manual effort.</li>
+        <li><b>Categorize and Organize:</b> Tag and sort feedback to surface trends and priorities.</li>
+        <li><b>Route to the Right Teams:</b> Ensure customer concerns are addressed efficiently by directing them to the appropriate departments.</li>
+        <li><b>Integrate with Existing Tools:</b> Connect with CRMs, analytics platforms, and support systems for better visibility and actionability.</li>
+      </ul>
+      <h3>What’s in This Portal</h3>
+      <p>
+        This portal provides the resources needed to integrate and use the Customer Feedback API:
+      </p>
+      <ul>
+        <li><b>Comprehensive API Documentation</b> – Detailed endpoints, request/response examples, and use cases.</li>
+        <li><b>Quick Start Guide</b> – Step-by-step setup instructions to help you integrate in minutes.</li>
+        <li><b>Authentication and Security</b> – Learn about API keys, OAuth, and data protection best practices.</li>
+        <li><b>Error Handling and Troubleshooting</b> – Common issues and solutions to ensure smooth operation.</li>
+        <li><b>Best Practices and Use Cases</b> – Proven strategies for maximizing the value of customer feedback.</li>
+      </ul>
+      <h3>Get Started Today</h3>
+      <p>
+        Unlock the power of real-time customer insights with ServiceSync’s Customer Feedback API.
+      </p>
+      <div class="btn-container">
+        <a href="#docs" class="btn">📖 Explore the Documentation</a>
+        <a href="#integrate" class="btn">🚀 Start Integrating</a>
+      </div>
+    </section>
+
     <!-- API Documentation Section -->
     <section class="content" id="docs">
       <div id="redoc-container"></div>
     </section>
-    
-    <!-- Optionally, add an Integration Section -->
+
+    <!-- Integration Section -->
     <section class="content" id="integrate">
       <h2>Integration Guide</h2>
       <p>
         [Your integration guide or additional information can go here.]
       </p>
     </section>
-    
+
     <!-- Initialize Redoc with custom theme and load the spec -->
     <script>
       Redoc.init(
@@ -193,32 +287,4 @@
                 fontWeight: "400",
                 lineHeight: "1.6em"
               },
-              code: {
-                fontSize: "13px",
-                fontFamily: "Courier, monospace",
-                color: "#e53935",
-                backgroundColor: "rgba(38, 50, 56, 0.05)"
-              }
-            },
-            sidebar: {
-              width: "260px",
-              backgroundColor: "#d6cabc",  /* Medium beige */
-              textColor: "#252525",
-              activeTextColor: "#99a58f"
-            },
-            rightPanel: {
-              backgroundColor: "#3e4f47",
-              width: "45%",
-              textColor: "#ffffff"
-            },
-            fab: {
-              backgroundColor: "#3e4f47",
-              color: "#ffffff"
-            }
-          }
-        },
-        document.getElementById("redoc-container")
-      );
-    </script>
-  </body>
-</html>
+              code:
